@@ -1,3 +1,7 @@
+import pytesseract
+
+pytesseract.pytesseract.tesseract_cmd = r"C:\Users\HC\AppData\Local\Programs\Tesseract-OCR\tesseract.exe"
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import os
