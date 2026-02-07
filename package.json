@@ -1,0 +1,21 @@
+{
+  "name": "petrol-pump-ledger-automation",
+  "version": "1.0.0",
+  "description": "Monorepo for petrol pump ledger automation with OCR, AI structure detection, and RAG chatbot",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend/apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
