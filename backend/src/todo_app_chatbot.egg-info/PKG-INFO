@@ -1,0 +1,33 @@
+Metadata-Version: 2.4
+Name: todo-app-chatbot
+Version: 0.1.0
+Summary: AI-powered todo management chatbot with natural language interface
+Author-email: Developer <developer@example.com>
+License: MIT
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi>=0.104.1
+Requires-Dist: uvicorn>=0.24.0
+Requires-Dist: sqlalchemy>=2.0.0
+Requires-Dist: psycopg2-binary>=2.9.0
+Requires-Dist: alembic>=1.12.0
+Requires-Dist: pydantic>=2.5.0
+Requires-Dist: python-multipart>=0.0.6
+Requires-Dist: better-exceptions>=0.3.3
+Requires-Dist: python-jose[cryptography]>=3.3.0
+Requires-Dist: passlib[bcrypt]>=1.7.0
+Requires-Dist: qdrant-client>=1.7.0
+Requires-Dist: langchain>=0.1.0
+Requires-Dist: langchain-community>=0.0.0
+Requires-Dist: langchain-core>=0.1.0
+Requires-Dist: openai>=1.0.0
+Requires-Dist: python-dotenv>=1.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0; extra == "dev"
+Requires-Dist: black>=23.0; extra == "dev"
+Requires-Dist: flake8>=6.0; extra == "dev"
+Requires-Dist: mypy>=1.0; extra == "dev"
+Requires-Dist: isort>=5.0; extra == "dev"
+
+# chatbot-backend

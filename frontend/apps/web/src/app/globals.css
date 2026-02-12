@@ -1,15 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.3);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --primary: #4f7cff;
+  --primary-light: #6a8cff;
+  --secondary: #6a5acd;
+  --accent: #8a7cfb;
+  --text-primary: #2d3748;
+  --text-secondary: #718096;
+  --text-dark: #2d3748;
+  --success: #06d6a0;
+  --warning: #ffd166;
+  --error: #ef476f;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      transparent
-    )
-    rgb(var(--background-end-rgb));
+  margin: 0;
+  padding: 0 2rem; /* Extra space on left and right */
+  font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--background);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utility classes */
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 3rem; /* Increased padding */
+  max-width: 600px; /* Wider card */
+  width: 100%;
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  color: var(--text-primary);
+  height: 64px; /* Larger height */
+  padding: 0 1.5rem;
+  width: 100%;
+  font-size: 1.1rem; /* Slightly larger text */
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem; /* Space between inputs */
+}
+
+.glass-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(79, 124, 255, 0.3);
+}
+
+.glass-button {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border: none;
+  box-shadow: 0 4px 15px rgba(79, 124, 255, 0.3);
+  border-radius: 16px;
+  color: white;
+  font-weight: 600;
+  padding: 1.2rem;
+  width: 100%;
+  transition: all 0.3s ease;
+  font-size: 1.1rem; /* Larger text */
+  height: 64px; /* Match input height */
+}
+
+.glass-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 124, 255, 0.4);
+}
+
+.glass-button:active {
+  transform: translateY(0);
+}
+
+.filter-button {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px;
+  color: var(--text-primary);
+  padding: 0.75rem 1.5rem; /* Larger padding */
+  transition: all 0.3s ease;
+  font-size: 1rem; /* Larger text */
+  margin: 0 0.5rem; /* Space between filter buttons */
+}
+
+.filter-button:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.filter-button.active {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  box-shadow: 0 4px 15px rgba(79, 124, 255, 0.3);
+}
+
+.task-item {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 1.5rem; /* Larger padding */
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* More space between elements */
+  margin-bottom: 1rem; /* Space between tasks */
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Animation utilities */
+.animate-in {
+  animation: animateIn 0.3s ease-out forwards;
+}
+
+@keyframes animateIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Center everything */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 0 1rem;
+  }
+
+  .glass-card {
+    padding: 2rem;
+    max-width: 100%;
+  }
+
+  .glass-input,
+  .glass-button {
+    height: 56px;
+    font-size: 1rem;
+  }
+
+  .filter-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    margin: 0 0.25rem;
+  }
+
+  .task-item {
+    padding: 1rem;
+    gap: 1rem;
+  }
 }

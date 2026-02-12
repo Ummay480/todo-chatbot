@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "description": "Next.js frontend for petrol pump ledger automation",
+  "description": "Next.js frontend for AI-powered todo management chatbot",
   "private": true,
   "scripts": {
     "dev": "next dev",

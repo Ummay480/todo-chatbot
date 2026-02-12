@@ -47,6 +47,10 @@ def get_db_session() -> Generator:
         db.close()
 
 
+# Alias for FastAPI dependency injection
+get_db = get_db_session
+
+
 @contextmanager
 def get_db_connection():
     """
@@ -69,12 +73,9 @@ def create_tables():
     """
     # Import models here to avoid circular imports
     from ..models.User import User
-    from ..models.LedgerPage import LedgerPage
-    from ..models.SalesEntry import SalesEntry
-    from ..models.DailyReport import DailyReport
-    from ..models.MonthlyReport import MonthlyReport
-    from ..models.ColumnDefinition import ColumnDefinition
-    from ..models.UserPreferences import UserPreferences
+    from ..models.Task import Task
+    from ..models.Conversation import Conversation
+    from ..models.Message import Message
 
     Base.metadata.create_all(bind=engine)
     logger.info("Database tables created successfully")
