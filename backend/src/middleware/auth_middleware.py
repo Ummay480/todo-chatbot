@@ -145,6 +145,7 @@ def get_user_from_token(token: str) -> Optional[dict]:
         return None
 
 
+<<<<<<< HEAD
 # FastAPI dependency function for getting current user
 async def get_current_user(request: Request) -> User:
     """
@@ -153,6 +154,8 @@ async def get_current_user(request: Request) -> User:
     return await AuthMiddleware.get_current_user(request)
 
 
+=======
+>>>>>>> d6ea802f0de91b405329275a8647530d1b4ee92c
 # Example usage as a middleware in FastAPI app
 async def auth_middleware(request: Request, call_next):
     """
