@@ -48,14 +48,14 @@ body {
   box-shadow: var(--glass-shadow);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-radius: 16px;
+  border-radius: 12px;
   color: var(--text-primary);
-  height: 64px; /* Larger height */
-  padding: 0 1.5rem;
+  height: 48px;
+  padding: 0 1rem;
   width: 100%;
-  font-size: 1.1rem; /* Slightly larger text */
+  font-size: 0.95rem;
   transition: all 0.3s ease;
-  margin-bottom: 1.5rem; /* Space between inputs */
+  margin-bottom: 0;
 }
 
 .glass-input::placeholder {
@@ -65,30 +65,35 @@ body {
 .glass-input:focus {
   outline: none;
   border-color: var(--primary-light);
-  box-shadow: 0 0 0 3px rgba(79, 124, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(79, 124, 255, 0.2);
 }
 
 .glass-button {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   border: none;
   box-shadow: 0 4px 15px rgba(79, 124, 255, 0.3);
-  border-radius: 16px;
+  border-radius: 12px;
   color: white;
   font-weight: 600;
-  padding: 1.2rem;
-  width: 100%;
+  padding: 0 1.5rem;
   transition: all 0.3s ease;
-  font-size: 1.1rem; /* Larger text */
-  height: 64px; /* Match input height */
+  font-size: 0.95rem;
+  height: 48px;
+  cursor: pointer;
 }
 
-.glass-button:hover {
-  transform: translateY(-2px);
+.glass-button:hover:not(:disabled) {
+  transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(79, 124, 255, 0.4);
 }
 
-.glass-button:active {
+.glass-button:active:not(:disabled) {
   transform: translateY(0);
+}
+
+.glass-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .filter-button {

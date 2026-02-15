@@ -11,7 +11,7 @@ import json
 import os
 from openai import OpenAI
 
-from ...database.connection import get_db
+from src.database.connection import get_db
 from ...middleware.auth_middleware import get_current_user
 from ...models.User import User
 from ...services.conversation_service import ConversationService

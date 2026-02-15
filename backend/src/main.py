@@ -35,7 +35,7 @@ async def health_check():
     return {"status": "healthy", "service": "todo-app-chatbot"}
 
 # Include API routers
-from .api.v1.chat_api import router as chat_router
+from api.v1.chat_api import router as chat_router
 from .api.v1.auth_api import router as auth_router
 from .api.v1.health_api import router as health_router
 
